@@ -7,8 +7,12 @@ export default {
     currentPlaying: 0,
     start(){
         elements.get.call(this);
+        elements.action.call(this);
         this.update();
         this.audio.onended = () => this.next();
+    },
+    play(){
+        this.audio.play();
     },
     next(){
         this.currentPlaying++;
