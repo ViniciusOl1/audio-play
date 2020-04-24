@@ -15,10 +15,12 @@ export default {
     play(){
         this.isPlaying = true;
         this.audio.play();
+        this.playPause.innerText = "pause";
     },
     pause(){
         this.isPlaying = false;
         this.audio.pause();
+        this.playPause.innerText = "play_arrow";
     },
     togglePlayPause(){
         if(this.isPlaying){
