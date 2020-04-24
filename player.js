@@ -5,6 +5,7 @@ export default {
     audioData: audios,
     currentAudio: {},
     currentPlaying: 0,
+    isPlaying: false,
     start(){
         elements.get.call(this);
         elements.action.call(this);
@@ -12,7 +13,19 @@ export default {
         this.audio.onended = () => this.next();
     },
     play(){
+        this.isPlaying = true;
         this.audio.play();
+    },
+    pause(){
+        this.isPlaying = false;
+        this.audio.pause();
+    },
+    togglePlayPause(){
+        if(this.isPlaying){
+            this.pause();
+        }else{
+            this.play();
+        }
     },
     next(){
         this.currentPlaying++;

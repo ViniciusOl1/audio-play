@@ -10,6 +10,6 @@ export default {
     this.audio = new Audio(audio);
   },
   action(){
-    this.playPause.onclick = () => this.play();
+    this.playPause.onclick = () => this.togglePlayPause();
   }
 }
