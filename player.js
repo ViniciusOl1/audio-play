@@ -29,12 +29,19 @@ export default {
             this.play();
         }
     },
+    toggleMute(){
+        this.audio.muted = !this.audio.muted;
+        this.vol.innerText = this.audio.muted ? "volume_mute" : "volume_up";
+    },
     next(){
         this.currentPlaying++;
         if(this.currentPlaying == this.audioData.length){
             this.restart();
         }
         this.update();
+    },
+    setVolume(value){
+        this.audio.volume = value/100;
     },
     update(){
         this.currentAudio = this.audioData[this.currentPlaying];
